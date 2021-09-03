@@ -1,28 +1,11 @@
 package org.introduction.heroes;
 
-public class Elf {
+public class Elf extends Warrior {
     private int height;
     private int age;
-    private String sex;
-    protected int strength;
 
-    private String name;
-
-    protected boolean hasWeapon;
-
-    public Elf(String sex, int strength, String name, boolean hasWeapon) {
-        this.strength = strength;
-        this.sex = sex;
-        this.name = name;
-        this.hasWeapon = hasWeapon;
-    }
-
-    public boolean isHasWeapon() {
-        return hasWeapon;
-    }
-
-    public void setHasWeapon(boolean hasWeapon) {
-        this.hasWeapon = hasWeapon;
+    public Elf(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor) {
+        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor);
     }
 
     public void eat() {
@@ -36,14 +19,6 @@ public class Elf {
     public void hit() {
         System.out.println("I hit with " + strength + " points");
 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getHeight() {
@@ -62,24 +37,23 @@ public class Elf {
         this.age = age;
     }
 
-    public String getSex() {
-        return sex;
-    }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
+    @Override
     public void sayGreeting() {
         System.out.println("Hello! I'm  " + name);
+    }
+
+    @Override
+    public void attack() {
+        System.out.println("The force of my blow is equal to: " + strength + " points.\n" +
+                "I do not have an additional weapon, respectively, the force of the blow is the same " + strength + " points.");
+    }
+
+    @Override
+    public void defence() {
+        System.out.println("My base defense is " + basicArmor + " points.\n" +
+                "I have no additional protection, so the total armor is the same " + basicArmor + " points.");
+
     }
 
     @Override
@@ -87,10 +61,6 @@ public class Elf {
         return "Elf{" +
                 "height=" + height +
                 ", age=" + age +
-                ", sex='" + sex + '\'' +
-                ", strength=" + strength +
-                ", name='" + name + '\'' +
-                ", hasWeapon=" + hasWeapon +
                 '}';
     }
 }
