@@ -4,8 +4,8 @@ public class Dwarf extends Warrior {
     private int hammer;
     private int shield;
 
-    public Dwarf(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int hammer, int shield) {
-        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor);
+    public Dwarf(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int canFly, int canSwim, int hammer, int shield) {
+        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor, canFly, canSwim);
         this.hammer = hammer;
         this.shield = shield;
     }
@@ -49,6 +49,21 @@ public class Dwarf extends Warrior {
         return "Dwarf{" +
                 "hammer=" + hammer +
                 ", shield=" + shield +
+                ", strength=" + strength +
+                ", basicArmor=" + basicArmor +
+                ", name='" + name + '\'' +
+                ", hasWeapon=" + hasWeapon +
+                ", hasArmor=" + hasArmor +
                 '}';
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I am " + name + " I can't fly!");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am " + name + " I can't swim!");
     }
 }

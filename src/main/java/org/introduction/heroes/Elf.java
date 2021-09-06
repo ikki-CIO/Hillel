@@ -4,15 +4,18 @@ public class Elf extends Warrior {
     private int height;
     private int age;
 
-    public Elf(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor) {
-        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor);
+    public Elf(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor,
+               int canFly, int canSwim) {
+        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor, canFly, canSwim);
+
     }
 
     public void eat() {
-
+        System.out.println("I am eating!");
     }
 
     public void run() {
+        System.out.println("I can run!");
 
     }
 
@@ -61,6 +64,21 @@ public class Elf extends Warrior {
         return "Elf{" +
                 "height=" + height +
                 ", age=" + age +
+                ", strength=" + strength +
+                ", basicArmor=" + basicArmor +
+                ", name='" + name + '\'' +
+                ", hasWeapon=" + hasWeapon +
+                ", hasArmor=" + hasArmor +
                 '}';
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I am " + name + " I can fly!");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am" + name + " I can swim!");
     }
 }

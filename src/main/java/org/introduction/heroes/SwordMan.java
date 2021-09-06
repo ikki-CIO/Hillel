@@ -4,11 +4,10 @@ public class SwordMan extends Elf {
     private int swordStrength;
     private int mail;
 
-    public SwordMan(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int swordStrength, int mail) {
-        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor);
+    public SwordMan(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int canFly, int canSwim, int swordStrength, int mail) {
+        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor, canFly, canSwim);
         this.swordStrength = swordStrength;
         this.mail = mail;
-
     }
 
     @Override
@@ -27,7 +26,6 @@ public class SwordMan extends Elf {
     public void hit() {
         System.out.println("I  hit with sword " + strength * swordStrength + " points.");
 
-
     }
 
     @Override
@@ -35,6 +33,21 @@ public class SwordMan extends Elf {
         return "SwordMan{" +
                 "swordStrength=" + swordStrength +
                 ", mail=" + mail +
+                ", strength=" + strength +
+                ", basicArmor=" + basicArmor +
+                ", name='" + name + '\'' +
+                ", hasWeapon=" + hasWeapon +
+                ", hasArmor=" + hasArmor +
                 '}';
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I am " + name + " I can't fly!");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am " + name + " I can swim!");
     }
 }

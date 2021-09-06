@@ -7,25 +7,25 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        Elf firstElf = new Elf("female", 10, 5, "elf", "firstElf", false, false);
-        Elf secondElf = new Elf("female", 10, 5, "elf", "secondElf", false, false);
+        Elf firstElf = new Elf("female", 10, 5, "elf", "firstElf", false, false, 1, 1);
+        Elf secondElf = new Elf("female", 10, 5, "elf", "secondElf", false, false, 1, 1);
 
         warriorsArray[0] = firstElf;
         warriorsArray[1] = secondElf;
 
-        Archer firstArcher = new Archer("female", 10, 5, "elf", "firstArcher", true, false, 30);
-        Archer secondArcher = new Archer("male", 10, 5, "elf", "secondArcher", true, false, 33);
-        Archer thirdArcher = new Archer("female", 10, 5, "elf", "thirdArcher", true, false, 39);
+        Archer firstArcher = new Archer("female", 10, 5, "elf", "firstArcher", true, false, 1, 2, 30);
+        Archer secondArcher = new Archer("male", 10, 5, "elf", "secondArcher", true, false, 1, 2, 33);
+        Archer thirdArcher = new Archer("female", 10, 5, "elf", "thirdArcher", true, false, 1, 2, 39);
 
         warriorsArray[2] = firstArcher;
         warriorsArray[3] = secondArcher;
         warriorsArray[4] = thirdArcher;
 
-        SwordMan firstSwordsMan = new SwordMan("female", 10, 5, "elf", "firstArcher", true, true, 30, 20);
-        SwordMan secondSwordsMan = new SwordMan("male", 10, 5, "elf", "secondSwordsMan", true, true, 33, 15);
-        SwordMan thirdSwordsMan = new SwordMan("female", 10, 5, "elf", "thirdSwordsMan", true, true, 45, 10);
-        SwordMan forthSwordsMan = new SwordMan("male", 10, 5, "elf", "forthSwordsMan", true, true, 40, 12);
-        SwordMan fifthSwordsMan = new SwordMan("female", 10, 5, "elf", "fifthSwordsMan", true, true, 55, 5);
+        SwordMan firstSwordsMan = new SwordMan("female", 10, 5, "elf", "firstArcher", true, true, 2, 1, 30, 20);
+        SwordMan secondSwordsMan = new SwordMan("male", 10, 5, "elf", "secondSwordsMan", true, true, 2, 1, 33, 15);
+        SwordMan thirdSwordsMan = new SwordMan("female", 10, 5, "elf", "thirdSwordsMan", true, true, 2, 1, 45, 10);
+        SwordMan forthSwordsMan = new SwordMan("male", 10, 5, "elf", "forthSwordsMan", true, true, 2, 1, 40, 12);
+        SwordMan fifthSwordsMan = new SwordMan("female", 10, 5, "elf", "fifthSwordsMan", true, true, 2, 1, 55, 5);
 
         warriorsArray[5] = firstSwordsMan;
         warriorsArray[6] = secondSwordsMan;
@@ -33,8 +33,8 @@ public class Solution {
         warriorsArray[8] = forthSwordsMan;
         warriorsArray[9] = fifthSwordsMan;
 
-        Dwarf firstDwarf = new Dwarf("female", 10, 30, "dwarf", "firstDwarf", true, true, 25, 40);
-        Dwarf secondDwarf = new Dwarf("male", 10, 30, "dwarf", "secondDwarf", true, true, 20, 45);
+        Dwarf firstDwarf = new Dwarf("female", 10, 30, "dwarf", "firstDwarf", true, true, 2, 2, 25, 40);
+        Dwarf secondDwarf = new Dwarf("male", 10, 30, "dwarf", "secondDwarf", true, true, 2, 2, 20, 45);
 
         warriorsArray[10] = firstDwarf;
         warriorsArray[11] = secondDwarf;
@@ -53,6 +53,8 @@ public class Solution {
             element.sayGreeting();
             element.attack();
             element.defence();
+            element.fly();
+            element.swim();
             System.out.println();
         }
 
@@ -61,7 +63,6 @@ public class Solution {
     private void setElves(Elf... elves) {
         for (int i = 0; i < elves.length; i++) {
             elvesArray[i] = elves[i];
-
         }
     }
 }

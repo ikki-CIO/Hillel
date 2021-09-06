@@ -1,6 +1,6 @@
 package org.introduction.heroes;
 
-public abstract class Warrior {
+public abstract class Warrior implements Flyable, Swimming {
     private String sex;
     protected int strength;
     protected int basicArmor;
@@ -11,7 +11,27 @@ public abstract class Warrior {
     protected boolean hasWeapon;
     protected boolean hasArmor;
 
-    public Warrior(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor) {
+    private int canFly;
+    private int canSwim;
+
+    public int getCanFly() {
+        return canFly;
+    }
+
+    public void setCanFly(int canFly) {
+        this.canFly = canFly;
+    }
+
+    public int getCanSwim() {
+        return canSwim;
+    }
+
+    public void setCanSwim(int canSwim) {
+        this.canSwim = canSwim;
+    }
+
+    public Warrior(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon,
+                   boolean hasArmor, int canFly, int canSwim) {
         this.sex = sex;
         this.strength = strength;
         this.basicArmor = basicArmor;
@@ -19,6 +39,8 @@ public abstract class Warrior {
         this.name = name;
         this.hasWeapon = hasWeapon;
         this.hasArmor = hasArmor;
+        this.canFly = canFly;
+        this.canSwim = canSwim;
     }
 
     public boolean isHasArmor() {
@@ -93,6 +115,9 @@ public abstract class Warrior {
                 ", name='" + name + '\'' +
                 ", hasWeapon=" + hasWeapon +
                 ", hasArmor=" + hasArmor +
+                ", canFly=" + canFly +
+                ", canSwim=" + canSwim +
                 '}';
     }
+
 }

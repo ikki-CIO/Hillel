@@ -3,8 +3,8 @@ package org.introduction.heroes;
 public class Archer extends Elf {
     private int bowStrength;
 
-    public Archer(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int bowStrength) {
-        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor);
+    public Archer(String sex, int strength, int basicArmor, String race, String name, boolean hasWeapon, boolean hasArmor, int canFly, int canSwim, int bowStrength) {
+        super(sex, strength, basicArmor, race, name, hasWeapon, hasArmor, canFly, canSwim);
         this.bowStrength = bowStrength;
     }
 
@@ -28,6 +28,21 @@ public class Archer extends Elf {
     public String toString() {
         return "Archer{" +
                 "bowStrength=" + bowStrength +
+                ", strength=" + strength +
+                ", basicArmor=" + basicArmor +
+                ", name='" + name + '\'' +
+                ", hasWeapon=" + hasWeapon +
+                ", hasArmor=" + hasArmor +
                 '}';
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I am " + name + " I can fly!");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am " + name + "  I can't swim!");
     }
 }
